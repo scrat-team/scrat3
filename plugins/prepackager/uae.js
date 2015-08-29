@@ -12,5 +12,5 @@ module.exports = function(ret){
   });
 
   //create private/log
-  mkdirp.sync(path.join(root, 'private/log/log'));
+  mkdirp.sync(path.join(root, 'private/log'));
 };

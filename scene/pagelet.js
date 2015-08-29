@@ -4,9 +4,15 @@ module.exports = function(options){
   //TODO: mount plugins
   //TODO: 修改下面的映射, 用新的方式, 简化
 
+  //TODO: __RESOURCE_MAP__
   fis.match('map.json', {
-    release: 'config/map.json'
+    release: 'config/map.json',
+    useCompile: true
   });
+
+  //fis.match('::package', {
+  //  postpackager: require('../plugins/postpackager/pagelet.js')
+  //});
 
   //下划线开头的文件不发布
   fis.match(/\/(components|views)(?=\/).*\/_[^\/]+\.tpl$/, {
@@ -57,9 +63,9 @@ module.exports = function(options){
     release: '/public/v/$1'
   });
 
-  fis.match('**', {
-    useMap: false,
-    useHash: false,
-    useCompile: false
-  });
+  //fis.match('**', {
+  //  useMap: false,
+  //  useHash: false,
+  //  useCompile: false
+  //});
 };
