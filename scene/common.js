@@ -4,9 +4,4 @@ module.exports = function(options){
   } else {
     fis.config.set('name', options || '');
   }
-
-  //TODO: set default config
-  fis.match('::package', {
-    postpackager: require('../plugins/postpackager/map.js')
-  });
 };

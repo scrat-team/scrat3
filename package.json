@@ -31,6 +31,7 @@
   "homepage": "https://github.com/scrat-team/scrat3#readme",
   "dependencies": {
     "fis3": "^3.2.0",
+    "fis3-hook-commonjs": "^0.1.1",
     "liftoff": "^2.1.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1"
