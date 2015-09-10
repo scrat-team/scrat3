@@ -1,8 +1,8 @@
 var path = require('path');
-var mkdirp = require('mkdirp');
 
 module.exports = function(ret){
   var root = fis.project.getProjectPath();
+
   //create conf/config.json
   var uae_conf = fis.config.get('uae_conf', {});
   fis.util.map(uae_conf, function(name, conf){
@@ -12,5 +12,5 @@ module.exports = function(ret){
   });
 
   //create private/log
-  mkdirp.sync(path.join(root, 'private/log'));
+  fis.util.mkdir(path.join(root, 'private/log'));
 };

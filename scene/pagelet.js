@@ -2,7 +2,8 @@ module.exports = function(options){
   require('./common')(options);
   var plugins = {
     swig: require('../plugins/preprocessor/swig.js'),
-    pagelet: require('../plugins/postpackager/pagelet.js')
+    pagelet: require('../plugins/postpackager/pagelet.js'),
+    uae: require('../plugins/prepackager/uae.js')
   };
 
   //分析JS文件中的require
@@ -11,6 +12,7 @@ module.exports = function(options){
 
   //TODO: uae
   fis.match('::package', {
+    prepackager: plugins.uae,
     postpackager: plugins.pagelet
   });
 
@@ -67,6 +69,8 @@ module.exports = function(options){
     useHash: true,
     useCompile: true
   });
+
+  //TODO: 文件打包上传
 
   //剩下的文件
   //fis.match('**', {
